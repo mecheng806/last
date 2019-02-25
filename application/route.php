@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 use think\Route;
 Route::rule('blog/:id','index/Blog/read');
+Route::rule('write_blog/:id','index/Blog/write');
 return [
     '__pattern__' => [
         'name' => '\w+',
