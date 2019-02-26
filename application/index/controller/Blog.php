@@ -4,7 +4,8 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Request;
-
+use think\Db;
+use app\index\model\Data;
 class Blog extends Controller
 {
     /**
@@ -35,7 +36,10 @@ class Blog extends Controller
      */
     public function save(Request $request)
     {
-        //
+        $blog = new Data();
+        $data = $blog->get_data();
+        $this->assign('data',$data);
+        return $this->fetch('blog');
     }
 
     /**
@@ -46,7 +50,15 @@ class Blog extends Controller
      */
     public function read($id)
     {
-        return 'this is ok';
+        $request = Request::instance();
+        echo '当前模块是：'.$request->module();
+        echo '当前的控制器是：'.$request->controller();
+        echo '当前的方法是：'.$request->action();
+        echo '当前的数据方法是：'.$request->method();
+        echo '<br>';
+        var_dump(input());
+        echo '<br>';
+        echo '当前的id是：'.input('get.id');
     }
 
     /**

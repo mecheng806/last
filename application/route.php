@@ -10,7 +10,10 @@
 // +----------------------------------------------------------------------
 use think\Route;
 Route::rule('blog/:id','index/Blog/read');
-Route::rule('write_blog/:id','index/Blog/write');
+Route::get('/',function(){
+	return 'hello,mei cheng';
+});
+//Route::rule('blog_save','index/Blog/save');
 return [
     '__pattern__' => [
         'name' => '\w+',
