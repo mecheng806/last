@@ -20,6 +20,7 @@ Route::rule('redis','index/Users/read');
 Route::rule('show/:id','index/Blog/save');
 Route::rule('register','index/Users/index');
 Route::rule('login','index/Users/login');
+Route::rule('gift','index/Gift/index');
 //Route::rule('blog_save','index/Blog/save');
 return [
     '__pattern__' => [
