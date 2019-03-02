@@ -36,8 +36,9 @@ class Blog extends Controller
      */
     public function save(Request $request)
     {
+        $id = input('param.id');
         $blog = new Data();
-        $data = $blog->get_data();
+        $data = $blog->get_data($id);
         $this->assign('data',$data);
         return $this->fetch('blog');
     }
@@ -58,7 +59,9 @@ class Blog extends Controller
         echo '<br>';
         var_dump(input());
         echo '<br>';
-        echo '当前的id是：'.input('get.id');
+        echo '当前的id是：'.input('param.id');
+        echo '<br>';
+        echo 'id is '.input('id');
     }
 
     /**

@@ -13,6 +13,13 @@ Route::rule('blog/:id','index/Blog/read');
 Route::get('/',function(){
 	return 'hello,mei cheng';
 });
+Route::get('hello',function(){
+	return 'I am a student!';
+});
+Route::rule('redis','index/Users/read');
+Route::rule('show/:id','index/Blog/save');
+Route::rule('register','index/Users/index');
+Route::rule('login','index/Users/login');
 //Route::rule('blog_save','index/Blog/save');
 return [
     '__pattern__' => [
